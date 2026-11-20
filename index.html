@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Student Task Planner</h1>
+      <p>Plan your work, track your progress, and stay organised.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Study smarter, one task at a time.</h2>
+      <p>Keep assignments, revision, and other college work in one simple place.</p>
+    </section>
+
+    <section class="summary" aria-label="Task summary">
+      <div class="summary-card"><span id="totalCount">0</span><small>Total tasks</small></div>
+      <div class="summary-card"><span id="pendingCount">0</span><small>Pending</small></div>
+      <div class="summary-card"><span id="completedCount">0</span><small>Completed</small></div>
+    </section>
+
+    <section class="panel">
+      <h2>Add a task</h2>
+      <form id="taskForm">
+        <div class="form-grid">
+          <label>Task name
+            <input id="taskName" type="text" placeholder="e.g. Revise Chapter 3" required maxlength="80">
+          </label>
+          <label>Due date
+            <input id="dueDate" type="date">
+          </label>
+          <label>Priority
+            <select id="priority">
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit">Add task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="task-heading">
+        <div>
+          <h2>Your tasks</h2>
+          <p class="muted">Tasks are saved in this browser on your device.</p>
+        </div>
+        <label class="filter-label">Show
+          <select id="filter">
+            <option value="all">All tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
+      </div>
+      <div class="progress-area">
+        <div class="progress-label"><span>Overall progress</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyMessage" class="empty-message">No tasks here yet. Add your first task above.</p>
+    </section>
+  </main>
+
+  <footer><p>Student Task Planner · A simple productivity project</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
